@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  nginx:
+    build: nginx
+    ports:
+      - 80
+    volumes_from:
+      - php
+  php:
+    build: php
+    volumes:
+      - /home/holst/Documents/GitHub:/workspace
+      - /var/www/html
