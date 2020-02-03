@@ -5,6 +5,6 @@ RUN tar -xzf gitlist.tar.gz
 
 FROM php:7.4.2-fpm
 RUN apt-get update && apt-get install -y git && rm -r /var/lib/apt/lists/*
-COPY --from=0 /gitlist/ .
 RUN mkdir --mode=0777 cache
+COPY --from=0 /gitlist/ .
 COPY config.ini .
